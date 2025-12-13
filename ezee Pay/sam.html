@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fullscreen Loop Carousel</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      /* Inline styles to make the counters look good */
+      :root {
+        --accent: #303289;
+        --muted: #6b6f76;
+        --card-bg: #ffffff;
+      }
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: #f5f7fb;
+        color: #222;
+        padding: 32px 16px;
+      }
+      .counter-cot {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .counter-container,
+      .counter-cotainer {
+        min-width: 180px;
+        flex: 0 0 220px;
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+      }
+      /* fixed areas so numbers and labels align across the row */
+      .counter-container i,
+      .counter-cotainer i {
+        font-size: 34px;
+        color: var(--accent);
+        margin: 6px 0 4px 0;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .counter {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--accent);
+        margin: 4px 0;
+        min-height: 40px;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .gray-color {
+        color: var(--muted);
+        font-weight: 600;
+        min-height: 34px;
+        display: block;
+        margin-top: 6px;
+      }
+      .counter-cot .counter-container span.gray-color,
+      .counter-cot .counter-cotainer span.gray-color {
+        display: block;
+      }
+      /* Make the number and label stack consistent so they appear in 'queue' */
+      .counter-container,
+      .counter-cotainer {
+        padding-top: 14px;
+        padding-bottom: 18px;
+      }
+      @media (max-width: 740px) {
+        .counter-container,
+        .counter-cotainer {
+          flex: 0 0 46%;
+          min-width: 44%;
+        }
+      }
+      @media (max-width: 420px) {
+        .counter-cot {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .counter-container,
+        .counter-cotainer {
+          flex: 0 0 auto;
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+ <section>
+        <div class="why-join-us">
+          <div class="ju-co blue-color">
+            <span>Why Join Us?</span>
+            <h2 class="gray-color bene-of">
+              Benefits Of <span class="blue-color">Joining Us</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/minimum_investment.svg"
+                    class="fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Minimum Investment
+              </h6>
+              <p class="m-0 fluid">
+                We offers all the services with a minimum investment and with a
+                secure platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/big_bunch.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Big Bunch of Products
+                <br />
+                & Services
+              </h6>
+              <p class="m-0">
+                We offers 60+ services to our agents to serve best way possible
+                to their customer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/earn_commission.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Earn Commission on
+                <br />
+                Every Transaction
+              </h6>
+              <p class="m-0">
+                Ezeepay offer maximum commission to their agents for all the
+                service transaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/prestige_customer_loyalty.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Prestige & Customer
+                <br />
+                Loyalty
+              </h6>
+              <p class="m-0">
+                Ezeepay family became a family of 500k agents with the trust and
+                loyalty of our agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> 
+      <section>
+        <div class="why-join-us">
+          <div class="ju-co blue-color">
+            <span>Why Join Us?</span>
+            <h2 class="gray-color bene-of">
+              Benefits Of <span class="blue-color">Joining Us</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/minimum_investment.svg"
+                    class="fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Minimum Investment
+              </h6>
+              <p class="m-0 fluid">
+                We offers all the services with a minimum investment and with a
+                secure platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/big_bunch.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Big Bunch of Products
+                <br />
+                & Services
+              </h6>
+              <p class="m-0">
+                We offers 60+ services to our agents to serve best way possible
+                to their customer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/earn_commission.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Earn Commission on
+                <br />
+                Every Transaction
+              </h6>
+              <p class="m-0">
+                Ezeepay offer maximum commission to their agents for all the
+                service transaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/prestige_customer_loyalty.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Prestige & Customer
+                <br />
+                Loyalty
+              </h6>
+              <p class="m-0">
+                Ezeepay family became a family of 500k agents with the trust and
+                loyalty of our agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> 
+      <section>
+        <div class="why-join-us">
+          <div class="ju-co blue-color">
+            <span>Why Join Us?</span>
+            <h2 class="gray-color bene-of">
+              Benefits Of <span class="blue-color">Joining Us</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/minimum_investment.svg"
+                    class="fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Minimum Investment
+              </h6>
+              <p class="m-0 fluid">
+                We offers all the services with a minimum investment and with a
+                secure platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/big_bunch.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Big Bunch of Products
+                <br />
+                & Services
+              </h6>
+              <p class="m-0">
+                We offers 60+ services to our agents to serve best way possible
+                to their customer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/earn_commission.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Earn Commission on
+                <br />
+                Every Transaction
+              </h6>
+              <p class="m-0">
+                Ezeepay offer maximum commission to their agents for all the
+                service transaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/prestige_customer_loyalty.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Prestige & Customer
+                <br />
+                Loyalty
+              </h6>
+              <p class="m-0">
+                Ezeepay family became a family of 500k agents with the trust and
+                loyalty of our agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+    <div class="counter-cot">
+      <div class="counter-container">
+        <i class="fab fa-3x"></i>
+        <div class="counter" data-target="100"></div>
+        <span class="gray-color">Merchant Outlet </span>
+      </div>
+
+      <div class="counter-cotainer">
+        <i class="fab fa-3x"></i>
+        <div class="counter" data-target="2490"></div>
+        <span class="gray-color"
+          >District <br />
+          Franchise</span
+        >
+      </div>
+
+      <div class="counter-cotainer">
+        <i class="fab fa-more fa-3x"></i>
+        <div class="counter" data-target="8382"></div>
+        <span class="gray-color">Super Distributor</span>
+      </div>
+
+      <div class="counter-cotainer">
+        <i class="fab fa-3x"></i>
+        <div class="counter" data-target="400000"></div>
+        <span class="gray-color">Distributor</span>
+      </div>
+    </div>
+     <section>
+        <div class="why-join-us">
+          <div class="ju-co blue-color">
+            <span>Why Join Us?</span>
+            <h2 class="gray-color bene-of">
+              Benefits Of <span class="blue-color">Joining Us</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/minimum_investment.svg"
+                    class="fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Minimum Investment
+              </h6>
+              <p class="m-0 fluid">
+                We offers all the services with a minimum investment and with a
+                secure platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/big_bunch.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Big Bunch of Products
+                <br />
+                & Services
+              </h6>
+              <p class="m-0">
+                We offers 60+ services to our agents to serve best way possible
+                to their customer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/earn_commission.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Earn Commission on
+                <br />
+                Every Transaction
+              </h6>
+              <p class="m-0">
+                Ezeepay offer maximum commission to their agents for all the
+                service transaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="bju_cl">
+              <h6 class="d-flex align-items-center mb-3">
+                <i>
+                  <img
+                    src="img1/prestige_customer_loyalty.svg"
+                    class="img-fluid lazyloaded"
+                    alt="img"
+                  />
+                </i>
+                Prestige & Customer
+                <br />
+                Loyalty
+              </h6>
+              <p class="m-0">
+                Ezeepay family became a family of 500k agents with the trust and
+                loyalty of our agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    <script src="/js/sam.js"></script>
+  </body>
+</html>
